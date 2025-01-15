@@ -9,7 +9,7 @@
     },
     {
         "id":2,
-        "name":"Fiction",
+        "name":"Story Book",
         "title":"Harry Potter and Chamber of Secrets",
         "price":0,
         "category":"Free",
@@ -35,16 +35,16 @@
         "id":5,
         "name":"Story Book",
         "title":"Harry Potter and Order of Phoenix",
-        "price":50,
+        "price":0,
         "category":"Free",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
     },
     {
         "id":6,
-        "name":"Wizarding Book",
+        "name":"Story Book",
         "title":"Harry Potter and The Half Blood Prince",
         "price":30,
-        "category":"Wizard",
+        "category":"Paid",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
     },
     {
@@ -52,7 +52,7 @@
         "name":"Story Book",
         "title":"Harry Potter and Deathly Hallows (part-1)",
         "price":70,
-        "category":"Free",
+        "category":"Paid",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
     },
     {
@@ -60,61 +60,61 @@
         "name":"Story Book",
         "title":"Harry Potter and Deathly Hallows (part-2)",
         "price":90,
-        "category":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
-    },
-    {
-        "id":9,
-        "name":"Magic Book",
-        "title":"Harry Potter and Secrets of Dumbledore",
-        "price":120,
-        "category":"Free",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
-    },
-    {
-        "id":10,
-        "name":"Story Book",
-        "title":"Harry Potter and Crimes of Grindelwald",
-        "price":220,
-        "category":"Story",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
-    },
-    {
-        "id":11,
-        "name":"Halucination Book",
-        "title":"Harry Potter and Where to find them",
-        "price":500,
-        "category":"Halucination",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
-    },
-    {
-        "id":12,
-        "name":"Story Book",
-        "title":"Harry Potter and The Cursed Child",
-        "price":430,
-        "category":"Story",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
-    },
-    {
-        "id":13,
-        "name":"Imagination Book",
-        "title":"Harry Potter and Return of Dark Lord",
-        "price":160,
-        "category":"Entertainment",
-        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
-    },
-    {
-        "id":14,
-        "name":"Story Book",
-        "title":"Harry Potter and The Wizarding world",
-        "price":340,
         "category":"Paid",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
     },
     {
+        "id":9,
+        "name":"Horror Book",
+        "title":"The Shining",
+        "price":120,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
+    },
+    {
+        "id":10,
+        "name":"Fiction Book",
+        "title":"To Kill a Mockingbird",
+        "price":220,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
+    },
+    {
+        "id":11,
+        "name":"Classic Book",
+        "title":"The Great Gatsby",
+        "price":500,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
+    },
+    {
+        "id":12,
+        "name":"Romance Book",
+        "title":"The Fault in Our Stars",
+        "price":430,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
+    },
+    {
+        "id":13,
+        "name":"Inspirational Book",
+        "title":"The Alchemist",
+        "price":160,
+        "category":"Paid",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
+    },
+    {
+        "id":14,
+        "name":"History Book",
+        "title":"Sapiens: A Brief History of Humankind",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
+    },
+    {
         "id":15,
-        "name":"Fiction",
-        "title":"Harry Potter and Hermione Granger",
+        "name":"Gothic Horror",
+        "title":"Dracula",
         "price":560,
         "category":"Paid",
         "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1735968158~exp=1735971758~hmac=684a41eebded391409a766d248f9c21086ca9a78bf0d80c01af83fb436b0b97c&w=740"
