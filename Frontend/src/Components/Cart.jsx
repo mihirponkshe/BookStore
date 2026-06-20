@@ -3,7 +3,7 @@ import { useCart } from '../context/CartProvider';
 import { useAuth } from '../context/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './footer';
+import Footer from './Footer';
 import api from '../api/axiosInstance';
 import toast from 'react-hot-toast';
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './footer';
+import Footer from './Footer';
 import api from '../api/axiosInstance';
 import { useCart } from '../context/CartProvider';
 
