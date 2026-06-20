@@ -5,7 +5,11 @@ const bookSchema=mongoose.Schema({
     price:Number,
     category:String,
     image:String,
-    title:String
+    title:String,
+    author: { type: String, default: "Unknown Author" },
+    description: { type: String, default: "No description available." },
+    rating: { type: Number, default: 0 },
+    availableQuantity: { type: Number, default: 10 }
 })
 
 const Book=mongoose.model("Book",bookSchema);

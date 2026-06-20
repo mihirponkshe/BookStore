@@ -2,9 +2,19 @@ import React, { useEffect, useState } from 'react'
 import Login from './Login';
 import { useAuth } from '../context/AuthProvider';
 import Logout from './logout';
+import { useCart } from '../context/CartProvider';
+
 function Navbar() { 
+    const { cartItems } = useCart(); 
 
     const [authUser,setAuthUser]=useAuth()
+    const [searchQuery, setSearchQuery] = useState("");
+    
+    const handleSearch = (e) => {
+      if(e.key === 'Enter' && searchQuery.trim()) {
+        window.location.href = `/course?search=${searchQuery.trim()}`;
+      }
+    }
 
 
     const[theme,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light")
@@ -45,17 +55,19 @@ function Navbar() {
         <a href="/course">course</a>
       </li>
       <li>
-        <a>Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li>
-        <a>About</a>
+        <a href="/about">About</a>
       </li>
     </>)
   return (
     <>
-    <div className={`max-w-screen-2xl container mx-auto md:px-20 px-4  fixed top-0 left-0 right-0 z-50 ${
-        sticky?"sticky-navbar shadow-md bg-base-200 dark:bg-slate-600 dark:text-white duration-300 transition-all":""}`}>
-    <div className="navbar bg-base-100">
+    <div className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        sticky ? "shadow-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800" : "bg-white dark:bg-slate-900"
+    }`}>
+      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
+        <div className="navbar bg-transparent">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -78,7 +90,7 @@ function Navbar() {
         {navItems}
       </ul>
     </div>
-    <a className="font-bold cursor-pointer text-xl">Book Store</a>
+    <a href="/" className="font-bold cursor-pointer text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">BookStore</a>
   </div>
   <div className="navbar-end space-x-3">
   <div className="navbar-center hidden lg:flex">
@@ -87,8 +99,15 @@ function Navbar() {
     </ul>
   </div>
   <div className='hidden md:block'>
-  <label className="px-3 py-2 border rounded -md input flex items-center gap-2">
-  <input type="text" className="grow outline-none dark:bg-slate-900 dark:text-white" placeholder="Search" />
+  <label className="input input-bordered flex items-center gap-2 bg-slate-100 dark:bg-slate-800 dark:border-slate-700 h-10 rounded-full px-4">
+  <input 
+    type="text" 
+    className="grow outline-none bg-transparent dark:text-white text-sm" 
+    placeholder="Search" 
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+    onKeyDown={handleSearch}
+  />
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -125,16 +144,40 @@ function Navbar() {
       d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
   </svg>
 </label>
+  <a href="/cart" className="btn btn-ghost btn-circle">
+    <div className="indicator">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+      <span className="badge badge-sm indicator-item bg-pink-500 text-white border-none">{cartItems.length}</span>
+    </div>
+  </a>
   {
-    authUser?<Logout/>:
- <div className="">
-    <a className="bg-black text-white px-4 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer on" 
-    onClick={()=>document.getElementById("my_modal_3").showModal()}>Login</a>
-    <Login/>
-  </div>
+    authUser ? (
+      <div className="dropdown dropdown-end">
+        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar placeholder">
+          <div className="bg-gradient-to-r from-pink-500 to-violet-500 text-neutral-content rounded-full w-10">
+            <span className="text-white font-bold">{authUser.fullname ? authUser.fullname.charAt(0).toUpperCase() : 'U'}</span>
+          </div>
+        </div>
+        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-white dark:bg-slate-800 rounded-box w-52 border dark:border-slate-700">
+          <li>
+            <a href="/profile" className="justify-between dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md">
+              Profile
+            </a>
+          </li>
+          <li><a href="/orders" className="dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md">My Orders</a></li>
+          <li><Logout/></li>
+        </ul>
+      </div>
+    ) :
+    <div className="">
+      <a className="bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600 text-white px-6 py-2 rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 cursor-pointer" 
+      onClick={() => document.getElementById("my_modal_3").showModal()}>Login</a>
+      <Login/>
+    </div>
   }
 </div>
 </div>
+      </div>
     </div>
     </>
   );

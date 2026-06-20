@@ -3,9 +3,8 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import bookRoute from "./route/book.route.js"
 import userRoute from "./route/user.route.js"
+import orderRoute from "./route/order.route.js"
 import cors from "cors"
-
-
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -26,6 +25,7 @@ const URI=process.env.MongoDBURI
 
 app.use("/book",bookRoute)
 app.use("/user",userRoute);
+app.use("/order", orderRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
