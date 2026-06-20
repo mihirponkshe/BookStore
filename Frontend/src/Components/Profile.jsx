@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './footer';
 import { useAuth } from '../context/AuthProvider';
 import Logout from './logout';
 
@@ -37,7 +37,7 @@ function Profile() {
             <h1 className="text-3xl font-bold mt-4 text-slate-800 dark:text-white">{authUser.fullname}</h1>
             <p className="text-slate-500 dark:text-slate-400">{authUser.email}</p>
           </div>
-          
+
           <div className="px-8 pb-8 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-slate-50 dark:bg-slate-900 p-4 rounded-lg border dark:border-slate-700">
@@ -49,7 +49,7 @@ function Profile() {
                 <p className="font-semibold dark:text-white">June 2026</p>
               </div>
             </div>
-            
+
             <div className="border-t dark:border-slate-700 pt-6 flex justify-between items-center">
               <div>
                 <h3 className="font-semibold dark:text-white">Security</h3>
