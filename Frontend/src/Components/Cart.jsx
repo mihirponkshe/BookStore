@@ -3,7 +3,7 @@ import { useCart } from '../context/CartProvider';
 import { useAuth } from '../context/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './footer';
 import api from '../api/axiosInstance';
 import toast from 'react-hot-toast';
 
@@ -80,8 +80,8 @@ function Cart() {
                     <div className="flex items-center border dark:border-slate-700 rounded-md">
                       <button onClick={() => updateQuantity(item._id, item.quantity - 1)} className="px-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-white">-</button>
                       <span className="px-3 py-1 dark:text-white">{item.quantity}</span>
-                      <button 
-                        onClick={() => updateQuantity(item._id, item.quantity + 1)} 
+                      <button
+                        onClick={() => updateQuantity(item._id, item.quantity + 1)}
                         className="px-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={item.quantity >= item.availableQuantity}
                       >
@@ -93,7 +93,7 @@ function Cart() {
                 </div>
               ))}
             </div>
-            
+
             <div className="lg:w-1/3">
               <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl border dark:border-slate-700">
                 <h3 className="text-xl font-bold dark:text-white mb-4">Order Summary</h3>
@@ -110,7 +110,7 @@ function Cart() {
                   <span>Total</span>
                   <span>${totalAmount.toFixed(2)}</span>
                 </div>
-                <button 
+                <button
                   onClick={handleCheckout}
                   className="w-full bg-gradient-to-r from-pink-500 to-violet-500 text-white py-3 rounded-md hover:shadow-lg transition-all duration-300 font-semibold"
                 >

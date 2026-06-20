@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './footer';
 import api from '../api/axiosInstance';
 import { useCart } from '../context/CartProvider';
 
@@ -60,12 +60,12 @@ function BookDetail() {
           </svg>
           Back to Books
         </Link>
-        
+
         <div className="flex flex-col md:flex-row gap-12 bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-sm border dark:border-slate-700">
           <div className="w-full md:w-1/3 flex justify-center">
             <img src={book.image || "https://via.placeholder.com/300"} alt={book.name} className="w-full max-w-sm rounded-xl shadow-lg hover:scale-105 transition-transform duration-300" />
           </div>
-          
+
           <div className="w-full md:w-2/3 space-y-6">
             <div>
               <div className="flex items-center gap-4 mb-2">
@@ -80,13 +80,13 @@ function BookDetail() {
               <h1 className="text-4xl font-bold text-slate-800 dark:text-white mb-2">{book.name}</h1>
               <p className="text-xl text-slate-500 dark:text-slate-400 font-medium">by {book.author || 'Unknown Author'}</p>
             </div>
-            
+
             <div className="prose dark:prose-invert">
               <h3 className="text-xl font-semibold dark:text-white">Description</h3>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                 {book.description || "Escape into new worlds with this amazing book. We offer a curated collection of literary masterpieces, hidden gems, and contemporary bestsellers. Find your perfect story today and immerse yourself in an unforgettable journey of words and imagination."}
               </p>
-              
+
               <div className="mt-6 flex items-center gap-2">
                 <span className="font-semibold text-slate-700 dark:text-slate-300">Availability:</span>
                 {book.availableQuantity > 0 ? (
@@ -96,11 +96,11 @@ function BookDetail() {
                 )}
               </div>
             </div>
-            
+
             <div className="pt-6 border-t dark:border-slate-700 flex items-center justify-between">
               <span className="text-4xl font-extrabold text-pink-500">${book.price}</span>
               {book.availableQuantity > 0 ? (
-                <button 
+                <button
                   onClick={() => addToCart(book)}
                   className="btn bg-gradient-to-r from-pink-500 to-violet-500 text-white border-none hover:from-pink-600 hover:to-violet-600 px-8 py-3 rounded-full text-lg shadow-lg hover:shadow-pink-500/50 transition-all duration-300 transform hover:-translate-y-1"
                 >
