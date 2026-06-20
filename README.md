@@ -2,6 +2,11 @@
 
 A modern, full-stack Book Store web application built using the MERN stack (MongoDB, Express, React, Node.js). It offers a premium user interface with light/dark mode support, live inventory management, user authentication, and a complete shopping cart system.
 
+## 🌐 Deployment
+- **Frontend:** Deployed on Vercel
+- **Backend:** Deployed on Render
+- **Database:** Hosted on MongoDB Atlas
+
 ## 🚀 Features
 
 ### Frontend (React + Vite + Tailwind CSS + DaisyUI)
